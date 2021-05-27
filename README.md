@@ -54,7 +54,7 @@ python3 app.py
 
 - request actors in the database
 - Returns:Json opject contains {'succes': True, 'actors': []}
-- **sample :** `curl http://127.0.0.1:8080/actors -H "Authorization: Bearer <ACCESS_TOKEN>"`
+- **sample :** `curl https://nicg-capstone.herokuapp.com/actors -H "Authorization: Bearer <ACCESS_TOKEN>"`
 
 ```
 {
@@ -109,7 +109,7 @@ python3 app.py
 
 - delete a single actor by id
 - Returns: Json opject contains {'succes': True, 'deleted_actor': {}}
-- **sample :** `curl -X DELETE http://127.0.0.1:8080/actors -H "Authorization: Bearer <ACCESS_TOKEN>"`
+- **sample :** `curl -X DELETE https://nicg-capstone.herokuapp.com/actors -H "Authorization: Bearer <ACCESS_TOKEN>"`
 
 ```
 {
@@ -127,7 +127,7 @@ python3 app.py
 
 - delete a single movie by id
 - Returns: Json opject contains {'succes': True, 'deleted_movie': {}}
-- **sample :** `curl -X DELETE http://127.0.0.1:8080/movies -H "Authorization: Bearer <ACCESS_TOKEN>"`
+- **sample :** `curl -X DELETE https://nicg-capstone.herokuapp.com/movies -H "Authorization: Bearer <ACCESS_TOKEN>"`
 
 ```
 {
@@ -145,7 +145,7 @@ python3 app.py
 - create new actor
 - Request Arguments: json object contains (name, age, gender)
 - Returns: Json opject contains {'succes': True, 'new_actor': {}}
-- **sample :** `curl -X POST http://127.0.0.1:8080/actors -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"name":"xox","age":15,"gender":"male"}'`
+- **sample :** `curl -X POST https://nicg-capstone.herokuapp.com/actors -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"name":"xox","age":15,"gender":"male"}'`
 
 ```
 {
@@ -164,7 +164,7 @@ python3 app.py
 - create new movie
 - Request Arguments: json object contains (title, year, month, day)
 - Returns: Json opject contains {'succes': True, 'new_movie': {}}
-- **sample :** `curl -X POST http://127.0.0.1:8080/movies -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"title": "End World","year": 2024,"month": 12,"day": 10}'`
+- **sample :** `curl -X POST https://nicg-capstone.herokuapp.com/movies -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"title": "End World","year": 2024,"month": 12,"day": 10}'`
 
 ```
 {
@@ -182,7 +182,7 @@ python3 app.py
 - modify specific actor by id
 - Request Arguments: json object contains at least one of these values (name, age, gender)
 - Returns: Json opject contains {'succes': True, 'modified_actor': {}}
-- **sample :** `curl -X PATHC http://127.0.0.1:8080/actors/6 -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"name":"test"}'`
+- **sample :** `curl -X PATCH https://nicg-capstone.herokuapp.com/actors/6 -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"name":"test"}'`
 
 ```
 {
@@ -201,7 +201,7 @@ python3 app.py
 - modify specific movie by id
 - Request Arguments: json object contains at least one of these values (title, year, month, day)
 - Returns: Json opject contains {'succes': True, 'modified_movie': {}}
-- **sample :** `curl -X PATHC http://127.0.0.1:8080/movies/7 -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"year":2026}'`
+- **sample :** `curl -X PATCH https://nicg-capstone.herokuapp.com/movies/7 -H "Authorization: Bearer <ACCESS_TOKEN>" -d '{"year":2026}'`
 
 ```
 {

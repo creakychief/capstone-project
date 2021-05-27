@@ -80,7 +80,7 @@ python3 app.py
 
 - request movies in the database
 - Returns:Json opject contains {'succes': True, 'movies': []}
-- **sample :** `curl http://127.0.0.1:8080/movies -H "Authorization: Bearer <ACCESS_TOKEN>"`
+- **sample :** `curl https://nicg-capstone.herokuapp.com/movies -H "Authorization: Bearer <ACCESS_TOKEN>"`
 
 ```
 {

@@ -50,6 +50,17 @@ python3 app.py
 
 `Note:` All Endpoints require authentication token except the home endpoint (`/`)
 
+
+
+### Getting Bearer Tokens:
+
+Please use the following Curl request to receieve updated bearer tokens:
+
+curl --request POST \
+  --url https://dev-vrxrz3h3.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{"client_id":"sCTwAvdVTzxDV991O8Yd6dHUvNdhZFC3","client_secret":"5uHxxUmqp2-m-cncSGj_F3GPFwNtnWzIdDp-Ysmb-MNWF2vaEnFyH_CS8f8YkUYS","audience":"https://yourlocalapi.com/aip","grant_type":"client_credentials"}'
+
 ### GET '/actors'
 
 - request actors in the database

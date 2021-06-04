@@ -2,6 +2,9 @@
 
 ## My project is live at https://nicg-capstone.herokuapp.com/
 
+My motivation for this project is to finish the Full Stack program and finish the nanodegree.
+
+
 There is no front-end since that is not a requirement for the project.
 
 Actor Token: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjJNNGFHOFUwTWkxVDcwdC1DemI5ciJ9.eyJpc3MiOiJodHRwczovL2Rldi12cnhyejNoMy51cy5hdXRoMC5jb20vIiwic3ViIjoiT2E1eUpCRDdBZ3h0NUVNeWZzR0c4Ym5FVVA2M0FkYUVAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8veW91cmxvY2FsYXBpLmNvbS9haXAiLCJpYXQiOjE2MjI4MjQxNTksImV4cCI6MTYyMzAyNDE1OSwiYXpwIjoiT2E1eUpCRDdBZ3h0NUVNeWZzR0c4Ym5FVVA2M0FkYUUiLCJzY29wZSI6ImdldDphY3RvcnMgZ2V0OmFjdG9yc2FuZG1vdmllcyIsImd0eSI6ImNsaWVudC1jcmVkZW50aWFscyIsInBlcm1pc3Npb25zIjpbImdldDphY3RvcnMiLCJnZXQ6YWN0b3JzYW5kbW92aWVzIl19.GUmP87-qtX0JLGPi-a0CM0-oXgbLmgBrt4oKvwzrikDfjler6p11-MetBeeQHDw_nGQ0zZFH9NAAAS33AobQPSXgh77WfUEVDNg9F_pp2Amd8fDtzj-uSfV_Wfx2GhC9NAXXy632UHuyDrhPFaRuhLLfaMKaxJfnYzUmA3XQtTxVI36N42kHbSe4P28nnLq7_cCH36uZKBNzJ34M7QYeo-v8HaKStT4ms9_wUWqb16RRnukjliBEQm9uOKFhd0s85UD19sy5_RGWvU1K6xwVNdp0ScFtTlux4jBm3yXpq0XxtbysbsNWVLVvEl0gvkvd1h0dWIf3m8jDCzGA7oonfw
@@ -232,7 +235,7 @@ curl --request POST \
 
 Our API have **3** roles :
 
-### Casting Assistant
+### Actor
 
 - Can view actors and movies
 
@@ -241,11 +244,6 @@ Our API have **3** roles :
 - All permissions a Casting Assistant has
 - Add or delete an actor from the database
 - Modify actors or movies
-
-### Executive Producer
-
-- All permissions a Casting Director has
-- Add or delete a movie from the database
 
 ## Testing
 

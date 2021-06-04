@@ -19,20 +19,6 @@ ACTORS_PER_PAGE = 10
 
 app = Flask(__name__)
 
-oauth = OAuth(app)
-
-auth0 = oauth.register(
-    'auth0',
-    client_id='E2CCJ3PsZlTz2UPsumHaaGbhPfMTzvHP',
-    client_secret='dbd-OlSfN7ZgyjMVa0fOUCpxsbiFSB6vJ5x84WlHqX6uyuQw5DGIJahfcu3VoWes',
-    api_base_url='https://dev-vrxrz3h3.us.auth0.com',
-    access_token_url='https://dev-vrxrz3h3.us.auth0.com/oauth/token',
-    authorize_url='https://dev-vrxrz3h3.us.auth0.com/authorize',
-    client_kwargs={
-        'scope': 'openid profile email',
-    },
-)
-
 database_path = os.environ['DATABASE_URL']
 auth0_domain = os.environ['AUTH0_DOMAIN']
 api_audience = os.environ['API_AUDIENCE']
@@ -77,33 +63,7 @@ def create_app(test_config=None):
 
         return 'Welcome to the CapStone Project of Nicholas Greiner'
 
-    @app.route('/login')
-    def login():
-        return auth0.authorize_redirect(redirect_uri='https://nicg-capstone.herokuapp.com/')
-
-    @app.route('/login-result', methods=['GET'])
-    def after_login():
-        return jsonify({
-            'success': True,
-            'message': 'Successful login. Get token from address bar.'
-        })
-
-    @app.route('/callback')
-    def callback_handling():
-        # Handles response from token endpoint
-        auth0.authorize_access_token()
-        resp = auth0.get('userinfo')
-        userinfo = resp.json()
-
-        # Store the user information in flask session.
-        session['jwt_payload'] = userinfo
-        session['profile'] = {
-            'user_id': userinfo['sub'],
-            'name': userinfo['name'],
-            'picture': userinfo['picture']
-        }
-        return redirect('/')    
-      
+   
     #  Get All the Actors
 
     @app.route('/actors', methods=['GET'])

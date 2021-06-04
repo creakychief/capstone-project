@@ -77,11 +77,22 @@ python3 app.py
 
 Please use the following Curl request to receieve updated bearer tokens:
 
+Actor Token:
+
+Use this cURL command to get updated token:
 curl --request POST \
   --url https://dev-vrxrz3h3.us.auth0.com/oauth/token \
   --header 'content-type: application/json' \
-  --data '{"client_id":"sCTwAvdVTzxDV991O8Yd6dHUvNdhZFC3","client_secret":"5uHxxUmqp2-m-cncSGj_F3GPFwNtnWzIdDp-Ysmb-MNWF2vaEnFyH_CS8f8YkUYS","audience":"https://yourlocalapi.com/aip","grant_type":"client_credentials"}'
+  --data '{"client_id":"Oa5yJBD7Agxt5EMyfsGG8bnEUP63AdaE","client_secret":"eDgIUe9ZinjxrcWFoVlF9PSgH01NupT-OJs2pl-hREvsrqNHPsoAESiEfQf7ct5R","audience":"https://yourlocalapi.com/aip","grant_type":"client_credentials"}'
+  
+Director Token:
 
+Use this cURL command to get updated token:
+curl --request POST \
+  --url https://dev-vrxrz3h3.us.auth0.com/oauth/token \
+  --header 'content-type: application/json' \
+  --data '{"client_id":"JvJBKNCF6FUDNHtwcd76vTlWS0FWE71r","client_secret":"tx9LkSfOjDp3aVnCw2k9I96MgbmDhwvdi4FQpwolgukJV8JKoBkkQK-_BxYe4vxo","audience":"https://yourlocalapi.com/aip","grant_type":"client_credentials"}'
+  
 ### GET '/actors'
 
 - request actors in the database
@@ -90,21 +101,64 @@ curl --request POST \
 
 ```
 {
-  "actors": [
-    {
-      "age": 15,
-      "gender": "female",
-      "id": 1,
-      "name": "Nada"
-    },
-    {
-      "age": 15,
-      "gender": "female",
-      "id": 5,
-      "name": "Mayar"
-    }
-  ],
-  "success": true
+    "actors": [
+        {
+            "age": "40",
+            "attributes_name": "Collins",
+            "gender": "Male",
+            "id": 1
+        },
+        {
+            "age": "12",
+            "attributes_name": "Blah Man",
+            "gender": "Male",
+            "id": 2
+        },
+        {
+            "age": "18",
+            "attributes_name": "Cool Man",
+            "gender": "Male",
+            "id": 3
+        },
+        {
+            "age": "40",
+            "attributes_name": "Adams Sundler",
+            "gender": "Male",
+            "id": 4
+        },
+        {
+            "age": "40",
+            "attributes_name": "Adams Sundler",
+            "gender": "Male",
+            "id": 5
+        },
+        {
+            "age": "40",
+            "attributes_name": "Adams Sundler",
+            "gender": "Male",
+            "id": 6
+        },
+        {
+            "age": "40",
+            "attributes_name": "Adams Sundler",
+            "gender": "Male",
+            "id": 7
+        },
+        {
+            "age": "40",
+            "attributes_name": "Adams Sundler",
+            "gender": "Male",
+            "id": 8
+        },
+        {
+            "age": "40",
+            "attributes_name": "Adams Sundler",
+            "gender": "Male",
+            "id": 9
+        }
+    ],
+    "success": true,
+    "total_actors": 9
 }
 ```
 
@@ -116,24 +170,16 @@ curl --request POST \
 
 ```
 {
-  "movies": [
-    {
-      "id": 1,
-      "release_date": "Tue, 10 Dec 2024 00:00:00 GMT",
-      "title": "shs movie"
-    },
-    {
-      "id": 4,
-      "release_date": "Tue, 10 Dec 2024 00:00:00 GMT",
-      "title": "super man"
-    },
-    {
-      "id": 6,
-      "release_date": "Tue, 10 Dec 2024 00:00:00 GMT",
-      "title": "myshs movie"
-    }
-  ],
-  "success": true
+    "movies": [
+        {
+            "actor_id": null,
+            "attributes_title": null,
+            "id": 1,
+            "release_date": "Tue, 25 May 2021 03:25:07 GMT"
+        }
+    ],
+    "success": true,
+    "total_movies": 1
 }
 ```
 
@@ -146,10 +192,10 @@ curl --request POST \
 ```
 {
  "deleted_actor": {
-   "age": 15,
-   "gender": "female",
-   "id": 1,
-   "name": "Hudaasa"
+      "age": "40",
+      "attributes_name": "Collins",
+      "gender": "Male",
+      "id": 1
  },
  "success": true
 }
@@ -219,10 +265,10 @@ curl --request POST \
 ```
 {
   "modified_actor": {
-    "age": 15,
-    "gender": "male",
-    "id": 6,
-    "name": "test"
+      "age": "40",
+      "attributes_name": "Collins",
+      "gender": "Male",
+      "id": 1
   },
   "success": true
 }
@@ -254,7 +300,7 @@ Our API have **2** roles :
 
 - Can view actors and movies
 
-### Casting Director
+### Casting Manager
 
 - All permissions an actor has
 - Add or delete an actor from the database

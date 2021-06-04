@@ -49,7 +49,7 @@ class CapstoneTestCase(unittest.TestCase):
     """
 # GET actors.
     def test_get_actors(self):
-        res = self.client().get("/actors")
+        res = self.client().get("/actors", headers=self.producer_headers)
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -87,7 +87,7 @@ class CapstoneTestCase(unittest.TestCase):
 #  DELETE actor with id.
 
     def test_delete_actors(self):
-        res = self.client().delete("/actors/1")
+        res = self.client().delete("/actors/1", headers=self.producer_headers)
         data = json.loads(res.data)
 
         actor = Actor.query.filter(Actor.id == 1).one_or_none()
@@ -110,7 +110,7 @@ class CapstoneTestCase(unittest.TestCase):
 #  DELETE movie with id.
 
     def test_delete_movies(self):
-        res = self.client().delete("/movies/1")
+        res = self.client().delete("/movies/1", headers=self.producer_headers)
         data = json.loads(res.data)
 
         movie = Movie.query.filter(Movie.id == 1).one_or_none()
@@ -133,7 +133,7 @@ class CapstoneTestCase(unittest.TestCase):
 # PATCH actor.
 
     def test_update_attribute_name(self):
-        res = self.client().patch('/actors/1', json={'attributes_name': "Kevin Hart"})
+        res = self.client().patch('/actors/1', json={'attributes_name': "Kevin Hart"}, headers=self.producer_headers)
         data = json.loads(res.data)
         actor = Actor.query.filter(Actor.id == 1).one_or_none()
 
@@ -153,7 +153,7 @@ class CapstoneTestCase(unittest.TestCase):
 # PATCH movie.
 
     def test_update_attribute_title(self):
-        res = self.client().patch('/movies/1', json={'attributes_title': "Chris Rock"})
+        res = self.client().patch('/movies/1', json={'attributes_title': "Chris Rock"}, headers=self.producer_headers)
         data = json.loads(res.data)
         movie = Movie.query.filter(Movie.id == 1).one_or_none()
 
@@ -173,7 +173,7 @@ class CapstoneTestCase(unittest.TestCase):
     # POST new actor.
 
     def test_post_actor(self):
-        res = self.client().post("/actors", json=self.new_actor)
+        res = self.client().post("/actors", json=self.new_actor, headers=self.producer_headers)
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)
@@ -194,7 +194,7 @@ class CapstoneTestCase(unittest.TestCase):
     # POST new movie.
 
     def test_post_movie(self):
-        res = self.client().post("/movies", json=self.new_movie)
+        res = self.client().post("/movies", json=self.new_movie, headers=self.producer_headers)
         data = json.loads(res.data)
 
         self.assertEqual(res.status_code, 200)

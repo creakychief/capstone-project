@@ -233,7 +233,7 @@ curl --request POST \
 
 ## API RBAC
 
-Our API have **3** roles :
+Our API have **2** roles :
 
 ### Actor
 
@@ -241,7 +241,7 @@ Our API have **3** roles :
 
 ### Casting Director
 
-- All permissions a Casting Assistant has
+- All permissions an actor has
 - Add or delete an actor from the database
 - Modify actors or movies
 
